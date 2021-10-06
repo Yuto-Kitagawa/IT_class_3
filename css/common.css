@@ -1,0 +1,62 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont,"Helvetica Neue", "Segoe UI","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.two {
+  background: #212121;
+  color: #fff;
+}
+
+.three {
+  background: #D32F2F;
+  color: #fff;
+}
+
+.four {
+  background: #5C6BC0;
+  color: #fff;
+}
+
+.five {
+  background: #FDD835;
+  color: #212121;
+}
+
+.six {
+  background: #43A047;
+  color: #fff;
+}
+
+.seven {
+  background: #FB8C00;
+  color: #fff;
+}
+
+.eight {
+  background: #F06292;
+  color: #fff;
+}
+
+.G1 {
+  background: #5C6BC0;
+}
+
+.G2 {
+  background: #D32F2F;
+}
+
+.G3 {
+  background: #00897B;
+}
+
+.GroupRace {
+  background: #212121;
+}

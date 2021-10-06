@@ -1,0 +1,1786 @@
+@charset "UTF-8";
+/*!
+ * ress.scss • v0.1.0
+ * MIT License
+ * github.com/berkandirim/ress-scss
+ */
+/* # =================================================================
+   # Global selectors
+   # ================================================================= */
+html {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  /* All browsers without overlaying scrollbars */
+  -webkit-text-size-adjust: 100%;
+  /* iOS 8+ */
+}
+
+*,
+::before,
+::after {
+  background-repeat: no-repeat;
+  /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
+  box-sizing: inherit;
+}
+
+::before,
+::after {
+  text-decoration: inherit;
+  /* Inherit text-decoration and vertical align to ::before and ::after pseudo elements */
+  vertical-align: inherit;
+}
+
+* {
+  padding: 0;
+  /* Reset `padding` and `margin` of all elements */
+  margin: 0;
+}
+
+/* # =================================================================
+	 # General elements
+	 # ================================================================= */
+/* Add the correct display in iOS 4-7.*/
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+hr {
+  overflow: visible;
+  /* Show the overflow in Edge and IE */
+}
+
+/*
+  * Correct `block` display not defined for any HTML5 element in IE 8/9
+  * Correct `block` display not defined for `details` or `summary` in IE 10/11
+  * and Firefox
+  * Correct `block` display not defined for `main` in IE 11
+  */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+summary {
+  display: list-item;
+  /* Add the correct display in all browsers */
+}
+
+small {
+  font-size: 80%;
+  /* Set font-size to 80% in `small` elements */
+}
+
+[hidden],
+template {
+  display: none;
+  /* Add the correct display in IE */
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+  /* Add a bordered underline effect in all browsers */
+  text-decoration: none;
+  /* Remove text decoration in Firefox 40+ */
+}
+
+a {
+  background-color: transparent;
+  /* Remove the gray background on active links in IE 10 */
+  -webkit-text-decoration-skip: objects;
+  /* Remove gaps in links underline in iOS 8+ and Safari 8+ */
+}
+
+a:active,
+a:hover {
+  outline-width: 0;
+  /* Remove the outline when hovering in all browsers */
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  /* Specify the font family of code elements */
+}
+
+b,
+strong {
+  font-weight: bolder;
+  /* Correct style set to `bold` in Edge 12+, Safari 6.2+, and Chrome 18+ */
+}
+
+dfn {
+  font-style: italic;
+  /* Address styling not present in Safari and Chrome */
+}
+
+/* Address styling not present in IE 8/9 */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/* https://gist.github.com/unruthless/413930 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* # =================================================================
+	 # Forms
+	 # ================================================================= */
+input {
+  border-radius: 0;
+}
+
+/* Apply cursor pointer to button elements */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"],
+[role="button"] {
+  cursor: pointer;
+}
+
+/* Replace pointer cursor in disabled elements */
+[disabled] {
+  cursor: default;
+}
+
+[type="number"] {
+  width: auto;
+  /* Firefox 36+ */
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* Safari 8+ */
+}
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  /* Safari 8 */
+}
+
+textarea {
+  overflow: auto;
+  /* Internet Explorer 11+ */
+  resize: vertical;
+  /* Specify textarea resizability */
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  /* Specify font inheritance of form elements */
+}
+
+optgroup {
+  font-weight: bold;
+  /* Restore the font weight unset by the previous rule. */
+}
+
+button {
+  overflow: visible;
+  /* Address `overflow` set to `hidden` in IE 8/9/10/11 */
+}
+
+/* Remove inner padding and border in Firefox 4+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: 0;
+  padding: 0;
+}
+
+/* Replace focus style removed in the border reset above */
+button:-moz-focusring,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  outline: 1px dotted ButtonText;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* Correct the inability to style clickable types in iOS */
+}
+
+button,
+select {
+  text-transform: none;
+  /* Firefox 40+, Internet Explorer 11- */
+}
+
+/* Remove the default button styling in all browsers */
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+  border-style: none;
+  color: inherit;
+}
+
+/* Style select like a standard input */
+select {
+  -moz-appearance: none;
+  /* Firefox 36+ */
+  -webkit-appearance: none;
+  /* Chrome 41+ */
+}
+
+select::-ms-expand {
+  display: none;
+  /* Internet Explorer 11+ */
+}
+
+select::-ms-value {
+  color: currentColor;
+  /* Internet Explorer 11+ */
+}
+
+legend {
+  border: 0;
+  /* Correct `color` not being inherited in IE 8/9/10/11 */
+  color: inherit;
+  /* Correct the color inheritance from `fieldset` elements in IE */
+  display: table;
+  /* Correct the text wrapping in Edge and IE */
+  max-width: 100%;
+  /* Correct the text wrapping in Edge and IE */
+  white-space: normal;
+  /* Correct the text wrapping in Edge and IE */
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* Correct the inability to style clickable types in iOS and Safari */
+  font: inherit;
+  /* Change font properties to `inherit` in Chrome and Safari */
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* Correct the odd appearance in Chrome and Safari */
+  outline-offset: -2px;
+  /* Correct the outline style in Safari */
+}
+
+/* # =================================================================
+	 # Specify media element style
+	 # ================================================================= */
+img {
+  border-style: none;
+  /* Remove border when inside `a` element in IE 8/9/10 */
+}
+
+/* Add the correct vertical alignment in Chrome, Firefox, and Opera */
+progress {
+  vertical-align: baseline;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+  /* Internet Explorer 11- */
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* Internet Explorer 11+, Windows Phone 8.1+ */
+}
+
+/* # =================================================================
+	 # Accessibility
+	 # ================================================================= */
+/* Hide content from screens but not screenreaders */
+@media screen {
+  [hidden~="screen"] {
+    display: inherit;
+  }
+  [hidden~="screen"]:not(:active):not(:focus):not(:target) {
+    position: absolute !important;
+    clip: rect(0 0 0 0) !important;
+  }
+}
+
+/* Specify the progress cursor of updating elements */
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+/* Specify the pointer cursor of trigger elements */
+[aria-controls] {
+  cursor: pointer;
+}
+
+/* Specify the unstyled cursor of disabled, not-editable, or otherwise inoperable elements */
+[aria-disabled] {
+  cursor: default;
+}
+
+/* # =================================================================
+	 # Selection
+	 # ================================================================= */
+/* Specify text selection background color and omit drop shadow */
+::-moz-selection {
+  background-color: #b3d4fc;
+  /* Required when declaring ::selection */
+  color: #000;
+  text-shadow: none;
+}
+
+::selection {
+  background-color: #b3d4fc;
+  /* Required when declaring ::selection */
+  color: #000;
+  text-shadow: none;
+}
+
+/*!
+ * ress.scss • v0.1.0
+ * MIT License
+ * github.com/berkandirim/ress-scss
+ */
+/* # =================================================================
+   # Global selectors
+   # ================================================================= */
+html {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  /* All browsers without overlaying scrollbars */
+  -webkit-text-size-adjust: 100%;
+  /* iOS 8+ */
+}
+
+*,
+::before,
+::after {
+  background-repeat: no-repeat;
+  /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
+  box-sizing: inherit;
+}
+
+::before,
+::after {
+  text-decoration: inherit;
+  /* Inherit text-decoration and vertical align to ::before and ::after pseudo elements */
+  vertical-align: inherit;
+}
+
+* {
+  padding: 0;
+  /* Reset `padding` and `margin` of all elements */
+  margin: 0;
+}
+
+/* # =================================================================
+	 # General elements
+	 # ================================================================= */
+/* Add the correct display in iOS 4-7.*/
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+hr {
+  overflow: visible;
+  /* Show the overflow in Edge and IE */
+}
+
+/*
+  * Correct `block` display not defined for any HTML5 element in IE 8/9
+  * Correct `block` display not defined for `details` or `summary` in IE 10/11
+  * and Firefox
+  * Correct `block` display not defined for `main` in IE 11
+  */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+summary {
+  display: list-item;
+  /* Add the correct display in all browsers */
+}
+
+small {
+  font-size: 80%;
+  /* Set font-size to 80% in `small` elements */
+}
+
+[hidden],
+template {
+  display: none;
+  /* Add the correct display in IE */
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+  /* Add a bordered underline effect in all browsers */
+  text-decoration: none;
+  /* Remove text decoration in Firefox 40+ */
+}
+
+a {
+  background-color: transparent;
+  /* Remove the gray background on active links in IE 10 */
+  -webkit-text-decoration-skip: objects;
+  /* Remove gaps in links underline in iOS 8+ and Safari 8+ */
+}
+
+a:active,
+a:hover {
+  outline-width: 0;
+  /* Remove the outline when hovering in all browsers */
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  /* Specify the font family of code elements */
+}
+
+b,
+strong {
+  font-weight: bolder;
+  /* Correct style set to `bold` in Edge 12+, Safari 6.2+, and Chrome 18+ */
+}
+
+dfn {
+  font-style: italic;
+  /* Address styling not present in Safari and Chrome */
+}
+
+/* Address styling not present in IE 8/9 */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/* https://gist.github.com/unruthless/413930 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* # =================================================================
+	 # Forms
+	 # ================================================================= */
+input {
+  border-radius: 0;
+}
+
+/* Apply cursor pointer to button elements */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"],
+[role="button"] {
+  cursor: pointer;
+}
+
+/* Replace pointer cursor in disabled elements */
+[disabled] {
+  cursor: default;
+}
+
+[type="number"] {
+  width: auto;
+  /* Firefox 36+ */
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* Safari 8+ */
+}
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  /* Safari 8 */
+}
+
+textarea {
+  overflow: auto;
+  /* Internet Explorer 11+ */
+  resize: vertical;
+  /* Specify textarea resizability */
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  /* Specify font inheritance of form elements */
+}
+
+optgroup {
+  font-weight: bold;
+  /* Restore the font weight unset by the previous rule. */
+}
+
+button {
+  overflow: visible;
+  /* Address `overflow` set to `hidden` in IE 8/9/10/11 */
+}
+
+/* Remove inner padding and border in Firefox 4+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: 0;
+  padding: 0;
+}
+
+/* Replace focus style removed in the border reset above */
+button:-moz-focusring,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  outline: 1px dotted ButtonText;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* Correct the inability to style clickable types in iOS */
+}
+
+button,
+select {
+  text-transform: none;
+  /* Firefox 40+, Internet Explorer 11- */
+}
+
+/* Remove the default button styling in all browsers */
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+  border-style: none;
+  color: inherit;
+}
+
+/* Style select like a standard input */
+select {
+  -moz-appearance: none;
+  /* Firefox 36+ */
+  -webkit-appearance: none;
+  /* Chrome 41+ */
+}
+
+select::-ms-expand {
+  display: none;
+  /* Internet Explorer 11+ */
+}
+
+select::-ms-value {
+  color: currentColor;
+  /* Internet Explorer 11+ */
+}
+
+legend {
+  border: 0;
+  /* Correct `color` not being inherited in IE 8/9/10/11 */
+  color: inherit;
+  /* Correct the color inheritance from `fieldset` elements in IE */
+  display: table;
+  /* Correct the text wrapping in Edge and IE */
+  max-width: 100%;
+  /* Correct the text wrapping in Edge and IE */
+  white-space: normal;
+  /* Correct the text wrapping in Edge and IE */
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* Correct the inability to style clickable types in iOS and Safari */
+  font: inherit;
+  /* Change font properties to `inherit` in Chrome and Safari */
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* Correct the odd appearance in Chrome and Safari */
+  outline-offset: -2px;
+  /* Correct the outline style in Safari */
+}
+
+/* # =================================================================
+	 # Specify media element style
+	 # ================================================================= */
+img {
+  border-style: none;
+  /* Remove border when inside `a` element in IE 8/9/10 */
+}
+
+/* Add the correct vertical alignment in Chrome, Firefox, and Opera */
+progress {
+  vertical-align: baseline;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+  /* Internet Explorer 11- */
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* Internet Explorer 11+, Windows Phone 8.1+ */
+}
+
+/* # =================================================================
+	 # Accessibility
+	 # ================================================================= */
+/* Hide content from screens but not screenreaders */
+@media screen {
+  [hidden~="screen"] {
+    display: inherit;
+  }
+  [hidden~="screen"]:not(:active):not(:focus):not(:target) {
+    position: absolute !important;
+    clip: rect(0 0 0 0) !important;
+  }
+}
+
+/* Specify the progress cursor of updating elements */
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+/* Specify the pointer cursor of trigger elements */
+[aria-controls] {
+  cursor: pointer;
+}
+
+/* Specify the unstyled cursor of disabled, not-editable, or otherwise inoperable elements */
+[aria-disabled] {
+  cursor: default;
+}
+
+/* # =================================================================
+	 # Selection
+	 # ================================================================= */
+/* Specify text selection background color and omit drop shadow */
+::-moz-selection {
+  background-color: #b3d4fc;
+  /* Required when declaring ::selection */
+  color: #000;
+  text-shadow: none;
+}
+
+::selection {
+  background-color: #b3d4fc;
+  /* Required when declaring ::selection */
+  color: #000;
+  text-shadow: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont,"Helvetica Neue", "Segoe UI","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.two {
+  background: #212121;
+  color: #fff;
+}
+
+.three {
+  background: #D32F2F;
+  color: #fff;
+}
+
+.four {
+  background: #5C6BC0;
+  color: #fff;
+}
+
+.five {
+  background: #FDD835;
+  color: #212121;
+}
+
+.six {
+  background: #43A047;
+  color: #fff;
+}
+
+.seven {
+  background: #FB8C00;
+  color: #fff;
+}
+
+.eight {
+  background: #F06292;
+  color: #fff;
+}
+
+.G1 {
+  background: #5C6BC0;
+}
+
+.G2 {
+  background: #D32F2F;
+}
+
+.G3 {
+  background: #00897B;
+}
+
+.GroupRace {
+  background: #212121;
+}
+
+header {
+  position: relative;
+}
+
+header .header__imgBox {
+  position: relative;
+}
+
+header .header__imgBox .swiper-container .swiper-wrapper .swiper-slide {
+  height: auto;
+}
+
+header .header__imgBox .swiper-container .swiper-wrapper .swiper-slide img {
+  height: 100%;
+  width: 100%;
+}
+
+header .header__imgBox h2 img {
+  width: 55%;
+  position: absolute;
+  right: 5%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 100;
+}
+
+header nav {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+header nav .nav {
+  position: relative;
+}
+
+header nav .nav .nav__bg {
+  width: 85%;
+  height: 80px;
+  margin: 40px auto;
+  background: #0F622C;
+  transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+  -moz-transform: skew(-20deg);
+  -webkit-transform: skew(-20deg);
+}
+
+header nav .nav__flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 80%;
+  position: absolute;
+  left: 10%;
+  top: 0;
+}
+
+header nav .nav__flex__logo {
+  display: block;
+  width: 13%;
+}
+
+header nav .nav__flex__logo h1 a img {
+  height: 100%;
+}
+
+header nav .nav__flex__items {
+  font-size: 2rem;
+}
+
+header nav .nav__flex__items ul {
+  display: flex;
+}
+
+header nav .nav__flex__items ul li {
+  list-style: none;
+}
+
+header nav .nav__flex__items ul li a {
+  padding: 27px 20px 27px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+header .toggle {
+  position: fixed;
+  right: 4%;
+  bottom: 2%;
+  z-index: 9999;
+  opacity: .6;
+  transition: .3s ease-in-out;
+}
+
+header .toggle:hover {
+  opacity: 1;
+}
+
+/*!
+ * ress.scss • v0.1.0
+ * MIT License
+ * github.com/berkandirim/ress-scss
+ */
+/* # =================================================================
+   # Global selectors
+   # ================================================================= */
+html {
+  box-sizing: border-box;
+  overflow-y: scroll;
+  /* All browsers without overlaying scrollbars */
+  -webkit-text-size-adjust: 100%;
+  /* iOS 8+ */
+}
+
+*,
+::before,
+::after {
+  background-repeat: no-repeat;
+  /* Set `background-repeat: no-repeat` to all elements and pseudo elements */
+  box-sizing: inherit;
+}
+
+::before,
+::after {
+  text-decoration: inherit;
+  /* Inherit text-decoration and vertical align to ::before and ::after pseudo elements */
+  vertical-align: inherit;
+}
+
+* {
+  padding: 0;
+  /* Reset `padding` and `margin` of all elements */
+  margin: 0;
+}
+
+/* # =================================================================
+	 # General elements
+	 # ================================================================= */
+/* Add the correct display in iOS 4-7.*/
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+hr {
+  overflow: visible;
+  /* Show the overflow in Edge and IE */
+}
+
+/*
+  * Correct `block` display not defined for any HTML5 element in IE 8/9
+  * Correct `block` display not defined for `details` or `summary` in IE 10/11
+  * and Firefox
+  * Correct `block` display not defined for `main` in IE 11
+  */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+summary {
+  display: list-item;
+  /* Add the correct display in all browsers */
+}
+
+small {
+  font-size: 80%;
+  /* Set font-size to 80% in `small` elements */
+}
+
+[hidden],
+template {
+  display: none;
+  /* Add the correct display in IE */
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+  /* Add a bordered underline effect in all browsers */
+  text-decoration: none;
+  /* Remove text decoration in Firefox 40+ */
+}
+
+a {
+  background-color: transparent;
+  /* Remove the gray background on active links in IE 10 */
+  -webkit-text-decoration-skip: objects;
+  /* Remove gaps in links underline in iOS 8+ and Safari 8+ */
+}
+
+a:active,
+a:hover {
+  outline-width: 0;
+  /* Remove the outline when hovering in all browsers */
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  /* Specify the font family of code elements */
+}
+
+b,
+strong {
+  font-weight: bolder;
+  /* Correct style set to `bold` in Edge 12+, Safari 6.2+, and Chrome 18+ */
+}
+
+dfn {
+  font-style: italic;
+  /* Address styling not present in Safari and Chrome */
+}
+
+/* Address styling not present in IE 8/9 */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/* https://gist.github.com/unruthless/413930 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* # =================================================================
+	 # Forms
+	 # ================================================================= */
+input {
+  border-radius: 0;
+}
+
+/* Apply cursor pointer to button elements */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"],
+[role="button"] {
+  cursor: pointer;
+}
+
+/* Replace pointer cursor in disabled elements */
+[disabled] {
+  cursor: default;
+}
+
+[type="number"] {
+  width: auto;
+  /* Firefox 36+ */
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* Safari 8+ */
+}
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  /* Safari 8 */
+}
+
+textarea {
+  overflow: auto;
+  /* Internet Explorer 11+ */
+  resize: vertical;
+  /* Specify textarea resizability */
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  /* Specify font inheritance of form elements */
+}
+
+optgroup {
+  font-weight: bold;
+  /* Restore the font weight unset by the previous rule. */
+}
+
+button {
+  overflow: visible;
+  /* Address `overflow` set to `hidden` in IE 8/9/10/11 */
+}
+
+/* Remove inner padding and border in Firefox 4+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: 0;
+  padding: 0;
+}
+
+/* Replace focus style removed in the border reset above */
+button:-moz-focusring,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  outline: 1px dotted ButtonText;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* Correct the inability to style clickable types in iOS */
+}
+
+button,
+select {
+  text-transform: none;
+  /* Firefox 40+, Internet Explorer 11- */
+}
+
+/* Remove the default button styling in all browsers */
+button,
+input,
+select,
+textarea {
+  background-color: transparent;
+  border-style: none;
+  color: inherit;
+}
+
+/* Style select like a standard input */
+select {
+  -moz-appearance: none;
+  /* Firefox 36+ */
+  -webkit-appearance: none;
+  /* Chrome 41+ */
+}
+
+select::-ms-expand {
+  display: none;
+  /* Internet Explorer 11+ */
+}
+
+select::-ms-value {
+  color: currentColor;
+  /* Internet Explorer 11+ */
+}
+
+legend {
+  border: 0;
+  /* Correct `color` not being inherited in IE 8/9/10/11 */
+  color: inherit;
+  /* Correct the color inheritance from `fieldset` elements in IE */
+  display: table;
+  /* Correct the text wrapping in Edge and IE */
+  max-width: 100%;
+  /* Correct the text wrapping in Edge and IE */
+  white-space: normal;
+  /* Correct the text wrapping in Edge and IE */
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* Correct the inability to style clickable types in iOS and Safari */
+  font: inherit;
+  /* Change font properties to `inherit` in Chrome and Safari */
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* Correct the odd appearance in Chrome and Safari */
+  outline-offset: -2px;
+  /* Correct the outline style in Safari */
+}
+
+/* # =================================================================
+	 # Specify media element style
+	 # ================================================================= */
+img {
+  border-style: none;
+  /* Remove border when inside `a` element in IE 8/9/10 */
+}
+
+/* Add the correct vertical alignment in Chrome, Firefox, and Opera */
+progress {
+  vertical-align: baseline;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+  /* Internet Explorer 11- */
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  /* Internet Explorer 11+, Windows Phone 8.1+ */
+}
+
+/* # =================================================================
+	 # Accessibility
+	 # ================================================================= */
+/* Hide content from screens but not screenreaders */
+@media screen {
+  [hidden~="screen"] {
+    display: inherit;
+  }
+  [hidden~="screen"]:not(:active):not(:focus):not(:target) {
+    position: absolute !important;
+    clip: rect(0 0 0 0) !important;
+  }
+}
+
+/* Specify the progress cursor of updating elements */
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+/* Specify the pointer cursor of trigger elements */
+[aria-controls] {
+  cursor: pointer;
+}
+
+/* Specify the unstyled cursor of disabled, not-editable, or otherwise inoperable elements */
+[aria-disabled] {
+  cursor: default;
+}
+
+/* # =================================================================
+	 # Selection
+	 # ================================================================= */
+/* Specify text selection background color and omit drop shadow */
+::-moz-selection {
+  background-color: #b3d4fc;
+  /* Required when declaring ::selection */
+  color: #000;
+  text-shadow: none;
+}
+
+::selection {
+  background-color: #b3d4fc;
+  /* Required when declaring ::selection */
+  color: #000;
+  text-shadow: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont,"Helvetica Neue", "Segoe UI","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.two {
+  background: #212121;
+  color: #fff;
+}
+
+.three {
+  background: #D32F2F;
+  color: #fff;
+}
+
+.four {
+  background: #5C6BC0;
+  color: #fff;
+}
+
+.five {
+  background: #FDD835;
+  color: #212121;
+}
+
+.six {
+  background: #43A047;
+  color: #fff;
+}
+
+.seven {
+  background: #FB8C00;
+  color: #fff;
+}
+
+.eight {
+  background: #F06292;
+  color: #fff;
+}
+
+.G1 {
+  background: #5C6BC0;
+}
+
+.G2 {
+  background: #D32F2F;
+}
+
+.G3 {
+  background: #00897B;
+}
+
+.GroupRace {
+  background: #212121;
+}
+
+footer {
+  background: #EDF7EE;
+  width: 100%;
+  margin: 160px 0 0;
+}
+
+footer ul {
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+  padding: 64px 0 0;
+  justify-content: space-around;
+  list-style: none;
+}
+
+footer ul li {
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+footer ul li a {
+  color: #212121;
+}
+
+footer .footer__logo img {
+  display: block;
+  width: 10%;
+  margin: 96px auto 40px;
+}
+
+footer p {
+  text-align: center;
+  padding: 0 0 80px;
+  font-size: 1.6rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont,"Helvetica Neue", "Segoe UI","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.two {
+  background: #212121;
+  color: #fff;
+}
+
+.three {
+  background: #D32F2F;
+  color: #fff;
+}
+
+.four {
+  background: #5C6BC0;
+  color: #fff;
+}
+
+.five {
+  background: #FDD835;
+  color: #212121;
+}
+
+.six {
+  background: #43A047;
+  color: #fff;
+}
+
+.seven {
+  background: #FB8C00;
+  color: #fff;
+}
+
+.eight {
+  background: #F06292;
+  color: #fff;
+}
+
+.G1 {
+  background: #5C6BC0;
+}
+
+.G2 {
+  background: #D32F2F;
+}
+
+.G3 {
+  background: #00897B;
+}
+
+.GroupRace {
+  background: #212121;
+}
+
+body .PredictCotent {
+  width: 80%;
+  margin: 0 auto;
+  padding: 180px 0 0 0;
+}
+
+body .PredictCotent h3 {
+  font-size: 3.2rem;
+  margin: 0 0 24px;
+}
+
+body .PredictCotent h3 span {
+  background: #5C6BC0;
+  color: #fff;
+  width: 70px;
+  height: 30px;
+  line-height: 30px;
+  transform: skew(-20deg);
+  -o-transform: skew(-20deg);
+  -moz-transform: skew(-20deg);
+  -webkit-transform: skew(-20deg);
+  display: inline-block;
+  text-align: center;
+  font-size: 1.6rem;
+  vertical-align: middle;
+  margin: 0 0 5px 12px;
+  font-family: serif;
+}
+
+body .PredictCotent p:nth-of-type(1) {
+  font-size: 2.4rem;
+  font-weight: lighter;
+  margin: 0 0 16px;
+}
+
+body .PredictCotent p:nth-of-type(2) {
+  font-size: 1.6rem;
+  font-weight: lighter;
+}
+
+body .PredictCotent .Saturday {
+  color: #D32F2F;
+}
+
+body .PredictCotent .Sunday {
+  color: #5C6BC0;
+}
+
+body .PredictCotent .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 40px 0;
+}
+
+body .PredictCotent .flex .PredictCotent__table {
+  width: 49%;
+  max-height: 540px;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+body .PredictCotent .flex .PredictCotent__table table {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+body .PredictCotent .flex .PredictCotent__table table tr {
+  background: #fff;
+}
+
+body .PredictCotent .flex .PredictCotent__table table tr th {
+  -ms-writing-mode: lr-tb;
+      writing-mode: horizontal-tb;
+  font-size: 1.8rem;
+  font-weight: 400;
+  width: 53px;
+  height: 53px;
+}
+
+body .PredictCotent .flex .PredictCotent__table table tr th:nth-of-type(1) {
+  background: #D32F2F;
+}
+
+body .PredictCotent .flex .PredictCotent__table table tr th:nth-of-type(5) {
+  padding: 5px 0;
+  width: 62%;
+}
+
+body .PredictCotent .flex .PredictCotent__table table tr td {
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+
+body .PredictCotent .flex .PredictCotent__table table tr .first {
+  background: #F4F0B5;
+}
+
+body .PredictCotent .flex .PredictCotent__table table tr .second {
+  background: #C9CACA !important;
+}
+
+body .PredictCotent .flex .PredictCotent__table table tr .third {
+  background: #C08D5E;
+}
+
+body .PredictCotent .flex .PredictCotent__table table tr td:nth-of-type(1) {
+  padding: 14px 10px;
+  font-size: 2rem;
+}
+
+body .PredictCotent .flex .PredictCotent__table table tr td:nth-of-type(2) {
+  font-size: 2rem;
+}
+
+body .PredictCotent .flex .PredictCotent__table table tr td:nth-of-type(3) {
+  font-size: 2rem;
+}
+
+body .PredictCotent .flex .PredictCotent__table table tr td:nth-of-type(4) {
+  font-size: 2rem;
+}
+
+body .PredictCotent .flex .PredictCotent__table table tr td:nth-of-type(5) {
+  font-size: 2rem;
+  text-align: inherit;
+  padding: 0 0 0 10px;
+}
+
+body .PredictCotent .flex .PredictCotent__table table tr:nth-of-type(1) {
+  color: #fff;
+  background: #0F622C;
+}
+
+body .PredictCotent .flex .PredictCotent__table table tr:nth-of-type(2n+3) td {
+  background: #EDF7EE;
+}
+
+body .PredictCotent .flex .PredictCotent__time {
+  width: 38%;
+  min-width: 440px;
+  border: 1px solid #E0E0E0;
+}
+
+body .PredictCotent .flex .PredictCotent__time h2 {
+  font-weight: 400;
+  background: #0F622C;
+  color: #fff;
+  font-size: 1.8rem;
+  height: 56px;
+  line-height: 56px;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+body .PredictCotent .flex .PredictCotent__time time {
+  display: block;
+  color: #D32F2F;
+  font-size: 3.2rem;
+  height: 56px;
+  line-height: 56px;
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+body .PredictCotent .flex .PredictCotent__time__flex {
+  display: flex;
+  height: 56px;
+}
+
+body .PredictCotent .flex .PredictCotent__time__flex h3 {
+  font-weight: 400;
+  width: 80px;
+  font-size: 1.8rem;
+  color: #fff;
+  background: #0F622C;
+  height: 56px;
+  line-height: 56px;
+  text-align: center;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+body .PredictCotent .flex .PredictCotent__time__flex p {
+  height: 56px;
+  line-height: 56px;
+  width: 82%;
+  padding: 0 0 0 16px;
+  font-weight: 400;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+body .PredictCotent .flex .PredictCotent__time__flex .bgColor {
+  background: #EDF7EE;
+}
+
+body .ticket {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  background: #EDF7EE;
+}
+
+body .ticket h2 {
+  background: #0F622C;
+  color: #FFFFFF;
+  height: 56px;
+  line-height: 56px;
+  font-size: 2.4rem;
+  padding: 0 0 0 30px;
+}
+
+body .ticket ul {
+  list-style: none;
+  width: 200px;
+}
+
+body .ticket ul li {
+  font-size: 2.4rem;
+  width: 200px;
+  height: 56px;
+  line-height: 56px;
+  background: #EEEEEE;
+  padding: 0 0 0 30px;
+}
+
+body .ticket ul li:hover {
+  background: #E0E0E0;
+}
+
+body .ticket__box {
+  display: none;
+  width: 1000px;
+  position: absolute;
+  left: 232px;
+  top: 87px;
+}
+
+body .ticket__box__content__flex {
+  display: flex;
+}
+
+body .ticket__box__content__flex__items h3 {
+  font-size: 3.2rem;
+}
+
+body .ticket__box__content__flex__items__number {
+  display: flex;
+  width: 544px;
+  height: 352px;
+  line-height: 352px;
+}
+
+body .ticket__box__content__flex__items__number .number {
+  width: 54px;
+  height: 54px;
+  border: 1px solid #212121;
+  text-align: center;
+  line-height: 54px;
+  font-size: 2.4rem;
+  margin: 148px 0 0 0;
+}
+
+body .ticket__box__content__flex__items__number .name {
+  font-size: 3.2rem;
+  margin: 0 0 0 24px;
+}
+
+body .ticket__box__content__flex__money {
+  height: 352px;
+  margin: 35px 0 0 0;
+}
+
+body .ticket__box__content__flex__money__content p {
+  font-size: 2.0rem;
+  margin: 0 0 12px;
+}
+
+body .ticket__box__content__flex__money__content input {
+  border: 1px solid #E0E0E0;
+  height: 48px;
+}
+
+body .ticket__box__content__flex__money__content span {
+  color: #212121;
+  margin: 0 0 0 16px;
+  font-size: 2.4rem;
+}
+
+body .ticket__box__content__flex__money__content .odds {
+  margin: 32px 0 0;
+}
+
+body .ticket__box__content__flex__money__content .red {
+  margin: 64px 0 0;
+  color: red;
+}
+
+body .ticket__box__content__flex__money__content .height {
+  height: 64px;
+}
+
+body .ticket .tab-B .ticket__box__content__flex__items__number .number {
+  margin: 148px 16px 0 0;
+}
+
+body .ticket .tab-D .ticket__box__content__flex__items__number .number {
+  margin: 148px 16px 0 0;
+  background: #000;
+  color: #fff;
+}
+
+body .ticket .tab-E .ticket__box__content__flex__items__number .number {
+  margin: 148px 16px 0 0;
+}
+
+body .ticket .tab-F .ticket__box__content__flex__items__number .number {
+  margin: 148px 16px 0 0;
+}
+
+body .ticket .tab-G .ticket__box__content__flex__items__number .number {
+  margin: 148px 16px 0 0;
+}
+
+body .ticket .tab-H .ticket__box__content__flex__items__number .number {
+  margin: 148px 16px 0 0;
+}
+
+body .ticket .tab-I .ticket__box__content__flex__items__number .number {
+  margin: 148px 16px 0 0;
+}
+
+body .ticket .is-show {
+  display: block;
+}
+
+body .ticket .is-active {
+  background: #43A047;
+  color: #fff;
+}

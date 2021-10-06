@@ -1,0 +1,176 @@
+@import "vars";
+@import "ress";
+@import "common";
+body{
+    height: 100vh;
+}
+    header{
+        position: relative;
+        .header__imgBox{
+            position: relative;
+                img{
+                    width: 100%;
+            }
+            h2{
+                img{
+                    width: 55%;
+                    position: absolute;
+                    right: 5%;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    z-index: 100;
+                }
+            }
+        }
+        nav{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            .nav{
+                position: relative;
+                .nav__bg{
+                    width: 85%;
+                    height: 80px;
+                    margin: 40px auto;
+                    background: $headerColor;
+                    transform: skew(-20deg);
+                    -o-transform: skew(-20deg);
+                    -moz-transform: skew(-20deg);
+                    -webkit-transform: skew(-20deg);
+                    // opacity: 0.7;
+                }
+                &__flex{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 100%;
+                    width: 80%;
+                    position: absolute;
+                    left: 10%;
+                    top: 0;
+                    &__logo{
+                        display: block;
+                        width: 16%;
+                        h1{
+                            a{
+                                img{
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+                    &__items{
+                        font-size: 2rem;
+                        ul{
+                            display: flex;
+                            li{
+                                list-style: none;
+                                a{
+                                    padding: 27px 20px 27px;
+                                    color: $headerTextColor;
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .form_container{
+        position: relative;
+        width: 33%;
+        h1{
+            font-size: 32px;
+            color: #212121;
+            font-family: "Hiragino Sans Pr6N";
+            position: absolute;
+            top: 174px;
+            left: 30%;
+            font-weight: 100;
+        }
+        .input_comtainer{
+            position: absolute;
+            font-size: 20px;
+            top: 250px;
+            left: 80%;
+           .input_name{
+               margin-top: 50px;
+           }
+           .input_email{
+               margin-top: 35px;
+           }
+           .input_pass{
+               margin-top: 70px;
+           }
+           .input_pass_tow{
+               margin-top: 35px;
+           }
+           input{
+               margin-top: 5px;
+           }
+           label{
+            margin-right: 15px;
+            }
+           .input_box{
+               display: flex;
+               .change_span{
+                   width: 64px;
+                   height: 24px;
+                   position: relative;
+                   z-index: 1;
+                   text-align: center;
+                   color: #FFFFFF;
+                   font-size: 16px;
+                  
+               }
+               .change_span::before{
+                   content: "";
+                   transform: skewX(-30deg);
+                   position: absolute;
+                   top: 0;
+                   left: 0;
+                   right: 0;
+                   bottom: 0;
+                   z-index: -1;
+                   background: #D32F2F;
+               }
+           }
+        }
+        input{
+            display: block;
+            width: 720px;
+            height: 56px;
+            border: 1px solid tomato;
+            outline: none;
+            background: #F5F5F5;
+            border: none;
+        }
+        button{
+            left: 27%;
+            width: 270px;
+            height: 72px;
+            font-size: 32px;
+            position: relative;
+            z-index: 1;
+            color: #FFFFFF;
+            margin-top: 50px;
+            transition: 0.3s;
+            bottom: -10%;
+        }
+        button::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            transform: skewX(-30deg);
+            background: #0F622C;
+        }
+
+    }

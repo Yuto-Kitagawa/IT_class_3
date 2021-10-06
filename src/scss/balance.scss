@@ -1,0 +1,11 @@
+@import "vars";
+@import "ress";
+@import "header";
+@import "footer";
+@import "common";
+.balance{
+    padding: 18.0rem 0 0; 
+    &__title{
+        margin: 0;
+    }
+}
