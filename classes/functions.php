@@ -321,14 +321,14 @@ class Functions extends Database
 
     public function getTansyou($race_id)
     {
-        $sql = "SELECT * FROM `temp` WHERE RACE_NUMBER = $race_id ORDER BY AIEXPECT LIMIT 1;";
+        $sql = "SELECT * FROM `temp` WHERE RACE_NUMBER = $race_id ORDER BY AIEXPECT DESC LIMIT 1;";
         $result = $this->conn->query($sql);
         return $result;
     }
 
     public function getWaku($id)
     {
-        $sql = "SELECT * FROM `temp` WHERE RACE_NUMBER = $id ORDER BY AIEXPECT LIMIT 5;";
+        $sql = "SELECT * FROM `temp` WHERE RACE_NUMBER = $id ORDER BY AIEXPECT DESC LIMIT 5;";
         $result = $this->conn->query($sql);
         $result_array = new ArrayObject();
 
@@ -340,7 +340,7 @@ class Functions extends Database
 
     public function getSanren($id)
     {
-        $sql = "SELECT * FROM `temp` WHERE RACE_NUMBER = $id ORDER BY AIEXPECT LIMIT 3;";
+        $sql = "SELECT * FROM `temp` WHERE RACE_NUMBER = $id ORDER BY AIEXPECT DESC LIMIT 3;";
         $result = $this->conn->query($sql);
         $result_array = new ArrayObject();
 
@@ -353,7 +353,7 @@ class Functions extends Database
 
     public function getSantan($id)
     {
-        $sql = "SELECT * FROM `temp` WHERE RACE_NUMBER = $id ORDER BY AIEXPECT LIMIT 3;";
+        $sql = "SELECT * FROM `temp` WHERE RACE_NUMBER = $id ORDER BY AIEXPECT DESC LIMIT 3;";
         $result = $this->conn->query($sql);
         $result_array = new ArrayObject();
 

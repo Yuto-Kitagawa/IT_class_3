@@ -148,7 +148,7 @@ function console_log($data)
                 <div class="race__box__main__title">
                     <h3><?= $race_array[0]['name'] ?><span><?= $race_array[0]['grade'] ?></span></h3>
                     <p><?= $race_array[0]['location'] ?> <?= $race_array[0]['style'] ?> <?= $race_array[0]['distance'] ?>m</p>
-                    <p><?= substr($race_array[0]['date'], -3, -2) ?>月<?= substr($race_array[0]['date'], -2) ?>日 (
+                    <p><?= substr($race_array[0]['date'], -4, -2) ?>月<?= substr($race_array[0]['date'], -2) ?>日 (
                         <span>
                             <?php $timestamp = mktime(0, 0, 0, substr($race_array[0]['date'], -3, -2), substr($race_array[0]['date'], -2), substr($race_array[0]['date'], -8, -5));
                             $date_1 = date('w', $timestamp);
@@ -195,7 +195,7 @@ function console_log($data)
                         <a href="./raceExpected.php?id=<?= $race_array[$i]['id'] ?>">
                             <h3><?= $race_array[$i]['name'] ?><span class="GroupRace"><?= $race_array[$i]['grade'] ?></span></h3>
                             <p><?= $race_array[$i]['location'] ?> <?= $race_array[$i]['style'] ?> <?= $race_array[1]['distance'] ?>m</p>
-                            <p><?= substr($race_array[$i]['date'], -3, -2) ?>月<?= substr($race_array[$i]['date'], -2) ?>日(
+                            <p><?= substr($race_array[$i]['date'], -4, -2) ?>月<?= substr($race_array[$i]['date'], -2) ?>日(
                                 <?php $timestamp = mktime(0, 0, 0, substr($race_array[$i]['date'], -3, -2), substr($race_array[$i]['date'], -2), substr($race_array[$i]['date'], -8, -5));
                                 $date_1 = date('w', $timestamp);
                                 echo $week[$date_1];
